@@ -37,7 +37,7 @@ const usuarios = sequelize.define('usuarios', {
 //usuarios.sync({force: true});
 
 //insrirndo dados nas tabelas nome_do_model.create({colum: value});
-postagem.create({
+/*postagem.create({
     titulo: "um titulo qualquer 2",
     conteudo: "lorem ipsun fate grand order mahou shoujo black clover"
-});
+});*/
