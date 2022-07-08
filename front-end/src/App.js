@@ -1,20 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 
 function App() {
+
+const [text, setText] = useState("");
+const [titulo, setTitulo] = useState("");
+console.log(text, titulo);
   return (
-    <>
+    <div className="App">
      <h1>criando uma nota</h1>
 
-     <form>
-      <label>titulo:</label>
-      <input type="text" name="titulo" placeholder="digite o titulo" />
-      <label>Conteudo:</label>
-      <textarea name="conteudo"></textarea>
+     <form className="flex_form">
+      <div className="space">
+        <label>titulo:</label>
+        <input type="text" className="tit_area" name="titulo" placeholder="digite o titulo" alue={titulo} onChange={(e) => setTitulo(e.target.value)} />
+      </div>
+      <div className="space">
+        <label>Conteudo:</label>
+        <textarea className="txt_area" name="conteudo" value={text} onChange={(e) => setText(e.target.value)}></textarea>
+      </div>
 
-      <button type="submit">Cadastrar postagem</button>
+      <div className="space"><button type="submit" className="black_txt" onClick={(e)=> e.preventDefault()}>Cadastrar postagem</button></div>
      </form>
-    </>
+    </div>
   );
 };
 
