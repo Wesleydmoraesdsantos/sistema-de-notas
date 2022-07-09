@@ -41,3 +41,5 @@ const usuarios = sequelize.define('usuarios', {
     titulo: "um titulo qualquer 2",
     conteudo: "lorem ipsun fate grand order mahou shoujo black clover"
 });*/
+
+module.exports = { sequelize, Sequelize, }

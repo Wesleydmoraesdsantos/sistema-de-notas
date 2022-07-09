@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Wesleydmoraesdsantos/sistema-de-notas#readme",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "handlebars": "^4.7.7",
