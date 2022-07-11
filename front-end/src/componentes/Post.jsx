@@ -5,11 +5,11 @@ export default function Post (props) {
 
     return (
         <>
-        <div>
-          <section>
-            <h2>{props.tit}</h2>
+        <div className="post_div">
+          <section className="post_section">
+            <h2 className="titulo">{props.titulo}</h2>
             <div>
-                <p>{props.texto}</p>
+                <p className="conteudo">{props.conteudo}</p>
             </div>
           </section>
         </div>

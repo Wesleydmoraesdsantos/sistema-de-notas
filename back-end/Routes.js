@@ -13,7 +13,9 @@ routes.use(cors());
 //main
 routes.get('/', async (req, res)=> {
     console.log("entrou aqui")
-    read().then((data)=> res.json(data)).catch(res.send("erro"));
+    await read()
+    .then((data)=> {console.log("go inside", data); res.json(data)})
+    .catch(()=>res.send("erro"));
 });
 
 //Inserir post

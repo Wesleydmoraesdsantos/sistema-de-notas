@@ -12,14 +12,16 @@ const Post = db.sequelize.define('postagem', {
 const insert = async data => {
     Post.sync();
 
-    const novo_post = await Post.create({
+    await Post.create({
         titulo: data.tit,
         conteudo: data.texto
     });
 };
 
 const read = async () => {
-    return await Post.findAll();
+    let res = await Post.findAll();
+    console.log("dados", res);
+    return res;
 }
 
 

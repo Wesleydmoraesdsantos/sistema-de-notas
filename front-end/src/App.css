@@ -4,6 +4,9 @@
   padding: 0;
   margin: 0;
 }
+::-webkit-scrollbar{
+  display: none;
+}
 .App {
   text-align: center;
 }
@@ -24,7 +27,7 @@
 }
 
 .tit_area{
-  color: black;
+  color: rgb(0, 0, 0);
 }
 .tit_area:focus{
   box-shadow: none;
@@ -42,6 +45,9 @@
 /* header */
 
 .header{
+  position: fixed;
+  background-color: rgb(15, 15, 15);
+  z-index: 1;
   width: 100%;
   display: flex;
   align-items: center;
@@ -55,4 +61,58 @@
 }
 .header h1 {
   color: rgba(255, 255, 255, 0.952);
+}
+
+/* posts */
+
+.align_posts{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.space_nothing{
+  height: 38px;
+}
+
+.post_div{
+  width: 94%;
+  background-color: rgb(15, 15, 15);
+  border: 1px solid rgba(245, 245, 245, 0.356);
+  box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.100);
+  margin: 10px 0 0 0;
+  border-radius: 11px;
+  padding: 5px;
+}
+.post_section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo{
+  font-size: 18px;
+  font-family:fantasy;
+  line-height: 22px;
+  text-align: left;
+  width: 100%;
+}
+.conteudo{
+  margin-top: 8px;
+  color: rgba(238, 238, 238, 0.877);
+  text-align: justify;
+}
+
+/* medias */
+
+@media (min-width: 750px) {
+  .post_div{
+    width: 750px;
+    border: 1px solid rgba(245, 245, 245, 0.356);
+    box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.100);
+    margin: 10px 0 0 0;
+    border-radius: 11px;
+    padding: 5px;
+  }
 }

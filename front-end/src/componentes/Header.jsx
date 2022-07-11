@@ -1,9 +1,10 @@
 import React from "react";
-import { VscMenu, VscAdd } from "react-icons/vsc";
+import { VscMenu, VscAdd, VscArrowLeft } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 import '../App.css';
 
-export default function Header () {
-
+export default function Header (props) {
+console.log(props.children[1])
     return (
         <div className="header">
          <div>
@@ -12,9 +13,7 @@ export default function Header () {
          <div>
             <h1>poster</h1>
          </div>
-         <div>
-            <VscAdd />
-         </div>
+         {props.children}
         </div>
     )
 }

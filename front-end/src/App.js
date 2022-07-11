@@ -1,4 +1,8 @@
 import React, {useState} from "react";
+import Header from "./componentes/Header";
+import { VscArrowLeft } from "react-icons/vsc";
+import { Link } from "react-router-dom";
+
 import './App.css';
 
 function App() {
@@ -20,7 +24,15 @@ const send_data = async (data) => {
 }
   return (
     <div className="App">
-     <h1>criando uma nota</h1>
+     <Header>
+     <Link to="/">
+             <div>
+                <VscArrowLeft />
+             </div>
+         </Link>
+     </Header>
+
+     <div className="space_nothing"></div>
 
      <form className="flex_form" action="send_data()" method="POST">
       <div className="space">
@@ -34,6 +46,9 @@ const send_data = async (data) => {
 
       <div className="space"><button type="submit" className="black_txt" onClick={(e)=> {e.preventDefault(); send_data({texto: text, tit: titulo})}}>Cadastrar postagem</button></div>
      </form>
+     
+     <div className="space_nothing"></div>
+
     </div>
   );
 };
