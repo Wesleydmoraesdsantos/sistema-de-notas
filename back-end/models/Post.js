@@ -19,7 +19,7 @@ const insert = async data => {
 };
 
 const read = async () => {
-    let res = await Post.findAll();
+    let res = await Post.findAll({order: [['id', 'DESC']]});
     console.log("dados", res);
     return res;
 }
