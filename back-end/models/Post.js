@@ -8,6 +8,19 @@ const Post = db.sequelize.define('postagem', {
     }
 });
 
-//Post.sync({force: true});
+//inserir
+const insert = async data => {
+    Post.sync();
 
-module.exports = Post;
+    const novo_post = await Post.create({
+        titulo: data.tit,
+        conteudo: data.texto
+    });
+};
+
+const read = async () => {
+    return await Post.findAll();
+}
+
+
+module.exports = {Post, insert, read};

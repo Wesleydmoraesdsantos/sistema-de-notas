@@ -1,7 +1,7 @@
 const routes = require("express").Router();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const Post = require("./models/Post");
+const {Post, insert, read} = require("./models/Post");
 //const { application } = require("express");
 
 //body parser
@@ -10,12 +10,18 @@ routes.use(bodyParser.json());
 
 //cors
 routes.use(cors());
+//main
+routes.get('/', async (req, res)=> {
+    console.log("entrou aqui")
+    read().then((data)=> res.json(data)).catch(res.send("erro"));
+});
 
-routes.post("/cadastrar", (req, res) => {
+//Inserir post
+routes.post("/cadastrar", async (req, res) => {
     let dados = req.body;
     console.log(dados);
-
-    res.json({teste: true, dados});
+    await insert(dados).then(()=> res.send("sucesso")).catch(()=> res.send("erro"));
+    //res.send("sucesso");
 });
 
 module.exports = { routes };

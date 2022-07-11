@@ -1,6 +1,8 @@
 *{
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 .App {
   text-align: center;
@@ -35,4 +37,22 @@
 }
 .black_txt{
   color: black;
+}
+
+/* header */
+
+.header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  box-shadow: 2.5px 2.5px 3px black;
+}
+.header div {
+  margin: 0 10px;
+}
+.header h1 {
+  color: rgba(255, 255, 255, 0.952);
 }
