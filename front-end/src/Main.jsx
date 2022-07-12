@@ -38,7 +38,7 @@ export default function Main () {
     }
     const build = () => {
         return <>
-             <div className="align_posts">{posts.map(obj => <Post titulo={obj.titulo} conteudo={obj.conteudo}/>)}</div>
+             <div className="align_posts">{posts.map(obj => <Post id={obj.id} titulo={obj.titulo} conteudo={obj.conteudo}/>)}</div>
             </>
     }
     return (

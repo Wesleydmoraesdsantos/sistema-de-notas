@@ -90,13 +90,23 @@
   align-items: center;
   justify-content: center;
 }
-
+.align_title{
+  width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ flex-direction: row;
+}
 .titulo{
   font-size: 18px;
   font-family:fantasy;
   line-height: 22px;
-  text-align: left;
-  width: 100%;
+}
+.trash{
+  color: white;
+}
+.trash:hover{
+  color: red;
 }
 .conteudo{
   margin-top: 8px;

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import '../App.css';
 
 export default function Header (props) {
-console.log(props.children[1])
+//console.log(props.children[1])
     return (
         <div className="header">
          <div>

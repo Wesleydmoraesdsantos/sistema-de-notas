@@ -18,11 +18,24 @@ const insert = async data => {
     });
 };
 
+//ler
 const read = async () => {
     let res = await Post.findAll({order: [['id', 'DESC']]});
     console.log("dados", res);
     return res;
-}
+};
+
+//deletar um post
+const deletar = async (ident)=> {
+    console.log(ident, typeof ident)
+   let sucess =  await Post.destroy({
+        where: {
+            'id': ident
+        }
+    }).then(()=> true).catch((e)=> e);
+    console.log("sucess : ", sucess)
+    return sucess;
+};
 
 
-module.exports = {Post, insert, read};
+module.exports = {Post, insert, read, deletar};
