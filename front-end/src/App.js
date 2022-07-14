@@ -65,7 +65,7 @@ const showMessage = () => {
         <textarea className="txt_area" name="conteudo" value={text} onChange={(e) => setText(e.target.value)}></textarea>
       </div>
 
-      <div className="space"><button type="submit" className="black_txt" onClick={(e)=> {e.preventDefault(); send_data({texto: text, tit: titulo})}}>Cadastrar postagem</button></div>
+      <div className="space"><button type="submit" className="black_txt" onClick={(e)=> {e.preventDefault(); send_data({texto: text, tit: titulo})}}>Adicionar nota</button></div>
      </form>
      
      <div className="space_nothing"></div>

@@ -10,7 +10,7 @@ export default function Header (props) {
              <VscMenu />
          </div>
          <div>
-            <h1>poster</h1>
+            <h1>Notes</h1>
          </div>
          {props.children}
         </div>

@@ -11,7 +11,7 @@ export default function Barra () {
         <div className="barra">
         <div className="menu_elemento">
             <VscChromeClose className="image" onClick={()=> close_or_open()}/>
-            <h1> Poster </h1>
+            <h1> Notes </h1>
         </div>
         <Link to="/cadastrar" className="no_underline">
             <div className="menu_elemento">
