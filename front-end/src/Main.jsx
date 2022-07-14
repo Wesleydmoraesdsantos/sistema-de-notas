@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { useSelector, useDispatch} from "react-redux";
 import { add_post } from "./store/posts/post";
 import Header from "./componentes/Header";
+import Barra from "./componentes/Barra";
 import Post from "./componentes/Post";
 import axios from "axios";
 import { VscAdd } from "react-icons/vsc";
@@ -43,6 +44,7 @@ export default function Main () {
     }
     return (
         <>
+        <Barra />
         <Header>
             <Link to="/cadastrar">
                 <div>

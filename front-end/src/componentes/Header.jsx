@@ -1,13 +1,12 @@
 import React from "react";
-import { VscMenu, VscAdd, VscArrowLeft } from "react-icons/vsc";
-import { Link } from "react-router-dom";
+import { VscMenu } from "react-icons/vsc";
 import '../App.css';
 
 export default function Header (props) {
 //console.log(props.children[1])
     return (
         <div className="header">
-         <div>
+         <div onClick={() => window.document.querySelector(".barra").classList.toggle("on")}>
              <VscMenu />
          </div>
          <div>

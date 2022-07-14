@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 import Header from "./componentes/Header";
+import Barra from "./componentes/Barra";
 import { VscArrowLeft } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { activeMessage, disableMessage } from "./store/message";
 
 import './App.css';
 
@@ -9,7 +12,15 @@ function App() {
 
 const [text, setText] = useState("");
 const [titulo, setTitulo] = useState("");
+
+const show = useSelector(state => state.message.showMessage);
+
+console.log(show);
+
 console.log(text, titulo);
+
+const dispatch = useDispatch();
+
 const send_data = async (data) => {
   console.log(data);
 
@@ -18,12 +29,22 @@ const send_data = async (data) => {
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(data)
   })
-  .then(res => res.json())
-  .then(console.log)
+  .then(showMessage())
   .catch(console.log);
+};
+
+const showMessage = () => {
+  console.log("enviado");
+
+  dispatch(activeMessage());
+
+  const time = setTimeout(() => {
+    dispatch(disableMessage())
+  }, 4000);
 }
   return (
     <div className="App">
+      <Barra />
      <Header>
      <Link to="/">
              <div>
@@ -48,7 +69,10 @@ const send_data = async (data) => {
      </form>
      
      <div className="space_nothing"></div>
-
+      <div class="space">
+        
+              {show ? <p className="menssagem"> cadastrado</p> : <></>}
+      </div>
     </div>
   );
 };
